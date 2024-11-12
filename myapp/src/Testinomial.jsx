@@ -2,7 +2,16 @@ import { Box, Typography, Avatar } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
 
-const Testinomial = () => {
+const Testinomial = (props) => {
+  let col1 = "white",
+  col2 = "black";
+if (props.mode) {
+  col1 = "white";
+  col2 = "black";
+} else {
+  col1 = "black";
+  col2 = "white";
+}
   return (
     <>
       <Grid
@@ -10,7 +19,7 @@ const Testinomial = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          padding:"3%",paddingTop:"0%", marginTop:"8%"
+          padding:"3%",paddingTop:"8%",backgroundColor:col1,color:col2
         }}
       >
         <Grid
@@ -20,14 +29,14 @@ const Testinomial = () => {
           <Typography textAlign="center" variant="h6" fontWeight="bold">
             Testinomial
           </Typography>
-          <Typography variant="b" color="#5C677D">
+          <Typography variant="b">
             See what our customers love about our products. Discover how we
             excel in efficiency, durability, and satisfaction. Join us for
             quality, innovation, and reliable support.
           </Typography>
         </Grid>
 
-        <Grid size={12}>
+        <Grid size={12} style={{backgroundColor:col1,color:col2}}>
           <Grid container>
             <Grid
               size={{ lg: 4, md: 6, sm: 12 }}
@@ -59,7 +68,7 @@ const Testinomial = () => {
                   ></Avatar>
                   <Typography variant="b">
                     Remy Sharp <br />{" "}
-                    <b style={{ color: "#828A9B", fontWeight: "normal" }}>
+                    <b style={{ fontWeight: "normal" }}>
                       Senior Engineer
                     </b>
                   </Typography>
@@ -96,7 +105,7 @@ const Testinomial = () => {
                   ></Avatar>
                   <Typography variant="b">
                     Travis Howard <br />{" "}
-                    <b style={{ color: "#828A9B", fontWeight: "normal" }}>
+                    <b style={{ fontWeight: "normal" }}>
                       Lead Product Designer
                     </b>
                   </Typography>
@@ -133,7 +142,7 @@ const Testinomial = () => {
                   ></Avatar>
                   <Typography variant="b">
                     Cindy Baker <br />{" "}
-                    <b style={{ color: "#828A9B", fontWeight: "normal" }}>
+                    <b style={{ fontWeight: "normal" }}>
                       CTO
                     </b>
                   </Typography>
@@ -170,7 +179,7 @@ const Testinomial = () => {
                   ></Avatar>
                   <Typography variant="b">
                     Julia Stewart <br />{" "}
-                    <b style={{ color: "#828A9B", fontWeight: "normal" }}>
+                    <b style={{ fontWeight: "normal" }}>
                       Senior Engineer
                     </b>
                   </Typography>
@@ -208,7 +217,7 @@ const Testinomial = () => {
                   <Typography variant="b">
                     John Smith
                     <br />{" "}
-                    <b style={{ color: "#828A9B", fontWeight: "normal" }}>
+                    <b style={{fontWeight: "normal" }}>
                       Product Engineer
                     </b>
                   </Typography>
@@ -245,7 +254,7 @@ const Testinomial = () => {
                   ></Avatar>
                   <Typography variant="b">
                     Daniel Wolf <br />{" "}
-                    <b style={{ color: "#828A9B", fontWeight: "normal" }}>
+                    <b style={{ fontWeight: "normal" }}>
                       CDO
                     </b>
                   </Typography>

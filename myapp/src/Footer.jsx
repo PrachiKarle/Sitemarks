@@ -2,7 +2,16 @@ import { List, ListItem, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
 
-const Footer = () => {
+const Footer = (props) => {
+  let col1 = "white",
+    col2 = "black";
+  if (props.mode) {
+    col1 = "white";
+    col2 = "black";
+  } else {
+    col1 = "black";
+    col2 = "white";
+  }
   return (
     <>
       <Grid
@@ -11,6 +20,7 @@ const Footer = () => {
           padding: "3%",
           borderBottom: "1px solid #EBEEF4",
           borderTop: "1px solid #EBEEF4",
+          backgroundColor:col1,color:col2
         }}
       >
         <Grid size={12}>
@@ -24,15 +34,13 @@ const Footer = () => {
                 sx={{
                   mr: 2,
                   display: { xs: "none", md: "flex" },
-                  // fontFamily: 'monospace',
                   fontWeight: 700,
-                  // letterSpacing: '.3rem',
-                  color: "#4876EE",
                   textDecoration: "none",
                   marginBottom: "2%",
+                  color:col2
                 }}
               >
-                <img src="Images/logo.jpg" height="30px" width="30px" alt="" />
+                <img src="Images/logo.png" height="30px" width="30px" style={{marginRight:"2%"}} alt="" />
                 Sitemarks
               </Typography>
               <Typography variant="b">
@@ -43,7 +51,6 @@ const Footer = () => {
 
               <List
                 style={{
-                  color: "#48546C",
                   textDecoration: "underline",
                   textAlign: "center",
                 }}
@@ -58,7 +65,7 @@ const Footer = () => {
               </Typography>
               <List
                 style={{
-                  color: "#48546C",
+                  
                   textDecoration: "underline",
                   cursor: "pointer",
                   textAlign: "center",
@@ -77,7 +84,7 @@ const Footer = () => {
               </Typography>
               <List
                 style={{
-                  color: "#48546C",
+                  
                   textDecoration: "underline",
                   cursor: "pointer",
                   textAlign: "center",
@@ -94,7 +101,6 @@ const Footer = () => {
               </Typography>
               <List
                 style={{
-                  color: "#48546C",
                   textDecoration: "underline",
                   cursor: "pointer",
                   textAlign: "center",
@@ -109,8 +115,8 @@ const Footer = () => {
         </Grid>
       </Grid>
 
-      <Grid size={12} style={{ textAlign: "center", padding: "2%" }}>
-        <Typography variant="b" fontWeight="bold" color="#525D74">
+      <Grid size={12} style={{ textAlign: "center", padding: "2%",backgroundColor:col1,color:col2 }}>
+        <Typography variant="b" fontWeight="bold" >
           Copyright © Sitemark 2024
         </Typography>
       </Grid>

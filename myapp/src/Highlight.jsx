@@ -2,7 +2,16 @@ import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
 
-const Highlight = () => {
+const Highlight = (props) => {
+  let col1 = "white",
+  col2 = "black";
+if (props.mode) {
+  col1 = "white";
+  col2 = "black";
+} else {
+  col1 = "black";
+  col2 = "white";
+}
   return (
     <>
       <Grid
@@ -10,7 +19,7 @@ const Highlight = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          padding: "3%",paddingTop:"0%", marginTop:"8%"
+          padding: "3%",paddingTop:"8%",backgroundColor:col1,color:col2
         }}
       >
         <Grid
@@ -20,7 +29,7 @@ const Highlight = () => {
           <Typography textAlign="center" variant="h6" fontWeight="bold">
             Highlights
           </Typography>
-          <Typography variant="b" color="#5C677D">
+          <Typography variant="b">
             Explore why our product stands out: adaptability, durability,
             user-friendly design, and innovation. Enjoy reliable customer
             support and precision in every detail.
