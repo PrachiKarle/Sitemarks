@@ -14,6 +14,7 @@ import FAQ from "./FAQ";
 import Grid from "@mui/material/Grid2";
 
 const Home = (props) => {
+  
   let col1 = "white",
     col2 = "black";
   if (props.mode) {

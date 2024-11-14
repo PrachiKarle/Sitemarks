@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Feature from "./Feature";
@@ -24,6 +24,7 @@ import Footer from "./Footer";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 
 const pages = ["/Features", "/Testinomial", "/Highlight", "/FAQ"];
+
 const App = () => {
   const [mode, setMode] = useState(true);
   let col1 = "black",
@@ -82,7 +83,13 @@ const App = () => {
                   textDecoration: "none",
                 }}
               >
-                <img src="Images/logo.png" height="30px" width="30px" style={{marginRight:"2%"}}  alt="" />
+                <img
+                  src="Images/logo.png"
+                  height="30px"
+                  width="30px"
+                  style={{ marginRight: "2%" }}
+                  alt=""
+                />
                 Sitemarks
               </Typography>
 
@@ -136,7 +143,14 @@ const App = () => {
                   color: "#4876EE",
                   textDecoration: "none",
                 }}
-              ><img src="Images/logo.png" height="30px" width="30px" style={{marginRight:"2%"}} alt="" />
+              >
+                <img
+                  src="Images/logo.png"
+                  height="30px"
+                  width="30px"
+                  style={{ marginRight: "2%" }}
+                  alt=""
+                />
                 Sitmarks
               </Typography>
               <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -174,16 +188,13 @@ const App = () => {
                 control={
                   <Checkbox
                     icon={<LightModeIcon />}
-                    checkedIcon={<DarkModeIcon  style={{color:"black"}}/>}
+                    checkedIcon={<DarkModeIcon style={{ color: "black" }} />}
                     onChange={() => handleChange()}
                   />
                 }
               ></FormControlLabel>
               <Box sx={{ flexGrow: 0 }}>
-                <Button
-                  variant="contained"
-                  backgroundColor="primary.main"
-                >
+                <Button variant="contained" backgroundColor="primary.main">
                   Sign in
                 </Button>
               </Box>
@@ -219,3 +230,5 @@ const App = () => {
   );
 };
 export default App;
+
+
