@@ -12,27 +12,16 @@ const Feature = (props) => {
     col = "black";
     col4 = "white";
   }
-  const [show1, setShow] = useState(true);
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
-  
+  const [show1, setShow] = useState([true,false,false]);
+
   const handleClick1 = () => {
-    setShow(true);
-    setShow2(false);
-    setShow3(false);
-  
+    setShow([true,false,false]);
   };
   const handleClick2 = () => {
-    setShow2(true);
-    setShow(false);
-    setShow3(false);
-   
+    setShow([false,true,false]);
   };
   const handleClick3 = () => {
-    setShow(false);
-    setShow2(false);
-    setShow3(true);
-   
+    setShow([false,false,true]);
   };
   return (
     <>
@@ -69,7 +58,7 @@ const Feature = (props) => {
         }}
       >
         <Grid size={{ md: 6, sm: 12 }}>
-          {show1 ? (
+          {show1[0] ? (
             <>
               <Box
                 style={{
@@ -83,7 +72,7 @@ const Feature = (props) => {
             </>
           ) : null}
 
-          {show2 ? (
+          {show1[1] ? (
             <>
               <Box
                 style={{
@@ -96,7 +85,7 @@ const Feature = (props) => {
               </Box>
             </>
           ) : null}
-          {show3 ? (
+          {show1[2] ? (
             <>
               <Box
                 style={{
